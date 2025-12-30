@@ -4,4 +4,16 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "azure-ai-vision-imageanalysis>=1.0.0",
+    "azure-core>=1.37.0",
+    "fastapi>=0.128.0",
+    "librosa>=0.11.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.2.6",
+    "openai>=2.14.0",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.21",
+    "uvicorn>=0.40.0",
+]
