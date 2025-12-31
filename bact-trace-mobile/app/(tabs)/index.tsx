@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, Alert, ActivityIndicator, Modal, Animated } from 'react-native';
-// 1. UPDATED IMPORTS 
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, Alert, ActivityIndicator, Modal, Animated, Switch } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { Audio } from 'expo-av';
-import * as ImagePicker from 'expo-image-picker';
+import * as Location from 'expo-location'; // ✅ NEW: For GPS
 import axios from 'axios';
-import { Activity, Mic, Camera as CameraIcon, UploadCloud, User, RefreshCw, Play, Square, SwitchCamera } from 'lucide-react-native';
+import { Activity, Mic, Camera as CameraIcon, UploadCloud, User, RefreshCw, Play, Square, SwitchCamera, MapPin, Thermometer, AlertCircle } from 'lucide-react-native';
 
-// ⚠️ REPLACE WITH YOUR LAPTOP IP (192.168.29.165 based on your screenshot)
+// ⚠️ REPLACE WITH YOUR LAPTOP IP
 const API_URL = 'http://192.168.29.165:8080/api/cases'; 
 
 export default function BactTraceApp() {
@@ -17,10 +16,17 @@ export default function BactTraceApp() {
   // Animation State (Pulsing Opacity)
   const fadeAnim = useRef(new Animated.Value(1)).current; 
 
-  // Form Data
+  // --- 1. NEW ROBUST DATA POINTS ---
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('Male');
+  
+  const [temperature, setTemperature] = useState('98.6'); // Default normal
+  const [symptomsDays, setSymptomsDays] = useState('1');
+  const [hasPhlegm, setHasPhlegm] = useState(false);
+  const [breathingDifficulty, setBreathingDifficulty] = useState(false);
+  const [location, setLocation] = useState<{lat: number, long: number} | null>(null);
+  // -------------------------------
 
   // Media State
   const [imageUri, setImageUri] = useState<string | null>(null);
@@ -41,97 +47,99 @@ export default function BactTraceApp() {
   });
 
   useEffect(() => {
-    if (!permission?.granted) requestPermission();
-    if (!audioPermission?.granted) requestAudioPermission();
+    (async () => {
+      if (!permission?.granted) requestPermission();
+      if (!audioPermission?.granted) requestAudioPermission();
+      
+      // ✅ NEW: Get GPS Location
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Permission Denied', 'Allow location to map outbreaks.');
+        return;
+      }
+      let loc = await Location.getCurrentPositionAsync({});
+      setLocation({ lat: loc.coords.latitude, long: loc.coords.longitude });
+    })();
   }, []);
 
-  // --- ANIMATION LOGIC (THE PULSE) ---
+  // Pulse Animation
   useEffect(() => {
     if (isLoading) {
-      // Loop: Fade Out -> Fade In -> Repeat
       Animated.loop(
         Animated.sequence([
-          Animated.timing(fadeAnim, {
-            toValue: 0.3, // Dim to 30%
-            duration: 800,
-            useNativeDriver: true,
-          }),
-          Animated.timing(fadeAnim, {
-            toValue: 1, // Back to 100%
-            duration: 800,
-            useNativeDriver: true,
-          }),
+          Animated.timing(fadeAnim, { toValue: 0.3, duration: 800, useNativeDriver: true }),
+          Animated.timing(fadeAnim, { toValue: 1, duration: 800, useNativeDriver: true }),
         ])
       ).start();
     } else {
-      // Reset when not loading
       fadeAnim.setValue(1);
     }
   }, [isLoading]);
 
-  // --- AUDIO LOGIC ---
+  // Audio Functions
   async function startRecording() {
     try {
       await Audio.setAudioModeAsync({ allowsRecordingIOS: true, playsInSilentModeIOS: true });
       const { recording } = await Audio.Recording.createAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
       setRecording(recording);
-    } catch (err) {
-      Alert.alert('Failed to start recording', 'Check microphone permissions.');
-    }
+    } catch (err) { Alert.alert('Error', 'Check mic permissions.'); }
   }
 
   async function stopRecording() {
     if (!recording) return;
     setRecording(null);
     await recording.stopAndUnloadAsync();
-    const uri = recording.getURI();
-    setAudioUri(uri);
+    setAudioUri(recording.getURI());
   }
 
-  // --- CAMERA LOGIC ---
-  function toggleCameraFacing() {
-    setFacing(current => (current === 'back' ? 'front' : 'back'));
-  }
-
+  // Camera Functions
   const takePicture = async () => {
     if (cameraRef.current) {
         try {
             const photo = await cameraRef.current.takePictureAsync({ quality: 0.5, skipProcessing: true });
             setImageUri(photo?.uri ?? null);
-        } catch (e) {
-            console.error(e);
-            Alert.alert("Camera Error", "Could not take photo");
-        }
+        } catch (e) { Alert.alert("Error", "Could not take photo"); }
     }
   };
 
   // --- SUBMIT LOGIC ---
   const handleSubmit = async () => {
     if (!imageUri || !audioUri) {
-      Alert.alert("Missing Data", "Please capture both photo and audio.");
+      Alert.alert("Missing Data", "Capture photo and audio first.");
       return;
     }
 
     setIsLoading(true);
-
     const formData = new FormData();
-    const cleanAudioUri = audioUri.startsWith('file://') ? audioUri : `file://${audioUri}`;
-    
-    // @ts-ignore
-    formData.append('audio', { uri: cleanAudioUri, name: `cough.m4a`, type: `audio/m4a` });
 
-    const cleanImageUri = imageUri.startsWith('file://') ? imageUri : `file://${imageUri}`;
-    const imageName = cleanImageUri.split('/').pop();
-    const match = /\.(\w+)$/.exec(imageName || '');
-    const type = match ? `image/${match[1]}` : `image/jpeg`;
-    
+    // Files
+    const cleanAudio = audioUri.startsWith('file://') ? audioUri : `file://${audioUri}`;
     // @ts-ignore
-    formData.append('image', { uri: cleanImageUri, name: imageName || 'photo.jpg', type: type });
+    formData.append('audio', { uri: cleanAudio, name: `cough.m4a`, type: `audio/m4a` });
 
+    const cleanImage = imageUri.startsWith('file://') ? imageUri : `file://${imageUri}`;
+    const imageName = cleanImage.split('/').pop();
+    const type = imageName?.split('.').pop() === 'png' ? 'image/png' : 'image/jpeg';
+    // @ts-ignore
+    formData.append('image', { uri: cleanImage, name: imageName || 'photo.jpg', type: type });
+
+    // Basic Data
     formData.append("patientName", name || "Mobile User");
     formData.append("age", age || "30");
     formData.append("gender", gender);
     formData.append("village", "Mobile Clinic");
+    formData.append("doctorId", "DOC-MOBILE-01"); // Added Doctor ID
+    
+    // ✅ NEW: Robust Data & GPS
+    formData.append("temperature", temperature);
+    formData.append("symptomsDays", symptomsDays);
+    formData.append("hasPhlegm", hasPhlegm ? "Yes" : "No");
+    formData.append("breathingDifficulty", breathingDifficulty ? "Yes" : "No");
+    
+    if (location) {
+        formData.append("latitude", String(location.lat));
+        formData.append("longitude", String(location.long));
+    }
 
     try {
       const response = await axios.post(API_URL, formData, {
@@ -148,8 +156,8 @@ export default function BactTraceApp() {
       setStep(2);
 
     } catch (error: any) {
-      console.error("Upload Error:", error);
-      Alert.alert("Upload Failed", "Could not reach server. Check 50MB limit or IP.");
+      console.error(error);
+      Alert.alert("Upload Failed", "Check server IP or Connection.");
     } finally {
       setIsLoading(false);
     }
@@ -173,58 +181,80 @@ export default function BactTraceApp() {
           <Activity color="#2563EB" size={28} />
           <Text style={styles.logoText}>Bact-Trace Mobile</Text>
         </View>
-        <User color="#2563EB" size={24} />
+        {location && (
+            <View style={styles.gpsBadge}>
+                <MapPin size={12} color="white"/>
+                <Text style={{color:'white', fontSize:10, fontWeight:'bold'}}>GPS ON</Text>
+            </View>
+        )}
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {step === 1 && (
           <View>
-            <Text style={styles.sectionTitle}>Patient Details</Text>
-            <TextInput style={styles.input} placeholder="Full Name" value={name} onChangeText={setName} />
-            <View style={styles.row}>
-              <TextInput style={[styles.input, {flex: 1, marginRight: 10}]} placeholder="Age" keyboardType="numeric" value={age} onChangeText={setAge} />
-              <TextInput style={[styles.input, {flex: 1}]} placeholder="Gender" value={gender} onChangeText={setGender} />
+            <Text style={styles.sectionTitle}>New Diagnosis</Text>
+
+            {/* 1. VITALS SECTION (NEW) */}
+            <View style={styles.card}>
+                <View style={styles.cardHeader}>
+                    <Thermometer color="#EF4444" size={24} /> 
+                    <Text style={styles.cardTitle}>Clinical Signs</Text>
+                </View>
+                
+                <TextInput style={styles.input} placeholder="Patient Name" value={name} onChangeText={setName} />
+                
+                <View style={styles.row}>
+                    <TextInput style={[styles.input, {flex: 1, marginRight: 10}]} placeholder="Age" keyboardType="numeric" value={age} onChangeText={setAge} />
+                    <TextInput style={[styles.input, {flex: 1}]} placeholder="Temp (°F)" keyboardType="numeric" value={temperature} onChangeText={setTemperature} />
+                </View>
+                
+                <View style={styles.row}>
+                    <TextInput style={[styles.input, {flex: 1}]} placeholder="Days Sick" keyboardType="numeric" value={symptomsDays} onChangeText={setSymptomsDays} />
+                </View>
+
+                {/* Toggles */}
+                <View style={styles.toggleRow}>
+                    <Text style={styles.label}>Productive Cough (Phlegm)?</Text>
+                    <Switch value={hasPhlegm} onValueChange={setHasPhlegm} trackColor={{true: '#EF4444', false: '#CBD5E1'}} thumbColor={hasPhlegm ? '#fff' : '#f4f3f4'} />
+                </View>
+                <View style={styles.toggleRow}>
+                    <View style={{flexDirection:'row', alignItems:'center', gap:5}}>
+                        <AlertCircle size={16} color="#DC2626" />
+                        <Text style={[styles.label, {color: '#B91C1C', fontWeight:'bold'}]}>Breathing Difficulty?</Text>
+                    </View>
+                    <Switch value={breathingDifficulty} onValueChange={setBreathingDifficulty} trackColor={{true: '#DC2626', false: '#CBD5E1'}} thumbColor={breathingDifficulty ? '#fff' : '#f4f3f4'} />
+                </View>
             </View>
 
+            {/* 2. AUDIO SECTION */}
             <View style={styles.card}>
-              <View style={styles.cardHeader}>
-                <Mic color="#A855F7" size={24} />
-                <Text style={styles.cardTitle}>Audio Analysis</Text>
-              </View>
+              <View style={styles.cardHeader}><Mic color="#A855F7" size={24} /><Text style={styles.cardTitle}>Cough Audio</Text></View>
               <View style={styles.recordRow}>
                 <TouchableOpacity onPress={recording ? stopRecording : startRecording} style={[styles.recordBtn, recording ? styles.recordingActive : null]}>
                   {recording ? <Square color="white" size={32} /> : <Mic color="#2563EB" size={32} />}
                 </TouchableOpacity>
                 <View style={styles.statusBox}>
                   {recording ? <Text style={styles.recordingText}>Recording...</Text> : audioUri ? (
-                    <View style={styles.playbackRow}><Play color="#2563EB" size={20} /><Text style={styles.audioSavedText}>Audio Saved</Text></View>
+                    <View style={styles.playbackRow}><Play color="#2563EB" size={20} /><Text style={styles.audioSavedText}>Audio Captured</Text></View>
                   ) : <Text style={styles.placeholderText}>Tap mic to record</Text>}
                 </View>
               </View>
             </View>
 
+            {/* 3. CAMERA SECTION */}
             <View style={styles.card}>
-              <View style={styles.cardHeader}>
-                <CameraIcon color="#4F46E5" size={24} />
-                <Text style={styles.cardTitle}>Throat Imaging</Text>
-              </View>
+              <View style={styles.cardHeader}><CameraIcon color="#4F46E5" size={24} /><Text style={styles.cardTitle}>Throat Image</Text></View>
               {imageUri ? (
                 <View>
                   <Image source={{ uri: imageUri }} style={styles.previewImage} />
-                  <TouchableOpacity onPress={() => setImageUri(null)} style={styles.retakeBtn}>
-                    <Text style={styles.retakeText}>Retake Photo</Text>
-                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setImageUri(null)} style={styles.retakeBtn}><Text style={styles.retakeText}>Retake Photo</Text></TouchableOpacity>
                 </View>
               ) : (
                 <View style={styles.cameraContainer}>
                     <CameraView style={styles.camera} facing={facing} ref={cameraRef} mode="picture">
                         <View style={styles.cameraOverlay}>
-                            <TouchableOpacity onPress={toggleCameraFacing} style={styles.flipBtn}>
-                                <SwitchCamera color="white" size={24} />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={takePicture} style={styles.captureBtn}>
-                                <View style={styles.captureInner} />
-                            </TouchableOpacity>
+                            <TouchableOpacity onPress={toggleCameraFacing} style={styles.flipBtn}><SwitchCamera color="white" size={24} /></TouchableOpacity>
+                            <TouchableOpacity onPress={takePicture} style={styles.captureBtn}><View style={styles.captureInner} /></TouchableOpacity>
                         </View>
                     </CameraView>
                 </View>
@@ -255,7 +285,7 @@ export default function BactTraceApp() {
             <View style={styles.detailsBox}>
               <View style={styles.detailRow}>
                 <Text style={styles.detailLabel}>Visual Findings:</Text>
-                <Text style={[styles.detailValue, aiResult.visualDiagnosis.includes("Invalid") ? {color:'red'} : {color:'green'}]}>
+                <Text style={[styles.detailValue, aiResult.visualDiagnosis.includes("Healthy") ? {color:'green'} : {color:'#D97706'}]}>
                   {aiResult.visualDiagnosis}
                 </Text>
               </View>
@@ -272,17 +302,14 @@ export default function BactTraceApp() {
       <Modal visible={isLoading} transparent={true} animationType="fade">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
-            
-            {/* Logo inside Spinner with Pulse Animation */}
             <View style={styles.loaderContainer}>
                 <ActivityIndicator size="large" color="#2563EB" style={styles.loaderSpinner} />
                 <Animated.View style={[styles.loaderIcon, { opacity: fadeAnim }]}>
                     <Activity color="#2563EB" size={32} />
                 </Animated.View>
             </View>
-
-            <Text style={styles.modalTitle}>Analyzing Patient Data...</Text>
-            <Text style={styles.modalSub}>Consulting AI Diagnostic Models</Text>
+            <Text style={styles.modalTitle}>Analyzing Vitals...</Text>
+            <Text style={styles.modalSub}>Consulting AI Protocols</Text>
           </View>
         </View>
       </Modal>
@@ -296,10 +323,13 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 20 },
   logoRow: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   logoText: { fontSize: 20, fontWeight: 'bold', color: '#1E293B' },
+  gpsBadge: { backgroundColor: '#10B981', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12, flexDirection: 'row', gap: 4, alignItems: 'center' },
   scrollContent: { paddingHorizontal: 20, paddingBottom: 40 },
   sectionTitle: { fontSize: 18, fontWeight: '600', marginBottom: 15, color: '#334155' },
   input: { backgroundColor: 'white', padding: 15, borderRadius: 12, marginBottom: 15, borderWidth: 1, borderColor: '#E2E8F0' },
   row: { flexDirection: 'row' },
+  toggleRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15, paddingVertical: 5 },
+  label: { fontSize: 16, color: '#334155' },
   card: { backgroundColor: 'white', padding: 20, borderRadius: 16, marginBottom: 20, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10, elevation: 2 },
   cardHeader: { flexDirection: 'row', gap: 10, alignItems: 'center', marginBottom: 15 },
   cardTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
