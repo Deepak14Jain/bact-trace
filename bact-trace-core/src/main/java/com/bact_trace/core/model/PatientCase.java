@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Data // Generates Getters/Setters
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "patient_cases")
@@ -18,24 +18,43 @@ public class PatientCase {
 
     // Doctor Info
     @Column(nullable = false)
-    private String doctorId; // The worker ID
-    private String villageName; // Local region
-    @Column(length = 5)
-    private String countryCode; // e.g., "IN", "KE", "BR" (Global Standard)
-
+    private String doctorId; 
+    
     // Patient Info
     private String patientName;
     private int age;
     private String gender;
+    private String villageName; 
+    @Column(length = 5)
+    private String countryCode; 
+
+    // --- NEW: LOCATION MAPPING ---
+    // Double is better than String for math/maps
+    private Double latitude;   
+    private Double longitude;
+    // -----------------------------
+
+    // Robust AI Inputs
+    private String temperature;      
+    private String symptomsDays;     
+    private String hasPhlegm;        
+    private String breathingDifficulty; 
+
+    @Lob
+    @Column(length = 10000000) 
+    private byte[] coughAudio; 
+    
+    @Lob
+    @Column(length = 10000000) 
+    private byte[] throatImage;
 
     // AI Diagnosis Results
-    private String coughDiagnosis; // e.g., "Viral", "Bacterial"
-    private double coughConfidence; // e.g., 0.95
+    private String coughDiagnosis; 
+    private double coughConfidence; 
+    private String visualDiagnosis; 
     
-    private String visualDiagnosis; // e.g., "Inflammation", "Healthy"
-    
-    @Column(length = 1000)
-    private String finalRecommendation; // "Refer to Hospital" or "Home Care"
+    @Column(length = 2000)
+    private String finalRecommendation; 
 
     // Metadata
     private LocalDateTime createdAt;
