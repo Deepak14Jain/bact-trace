@@ -1,0 +1,614 @@
+{
+  "en": {
+    "translation": {
+      "nav": {
+        "surveillance": "National Surveillance",
+        "launch": "Launch Dashboard",
+        "title": "Bact-Trace"
+      },
+      "hero": {
+        "badge": "Official Imagine Cup Entry",
+        "title": "Stop the Superbugs.",
+        "subtitle": "Before they start.",
+        "desc": "Bact-Trace is the world's first Multimodal AI Surveillance System designed to distinguish viral vs. bacterial infections in rural populations.",
+        "btn_deploy": "Deploy Solution",
+        "btn_map": "View Live Map"
+      },
+      "stats": {
+        "deaths": "Annual deaths by 2050 due to AMR.",
+        "unnecessary": "Antibiotics prescribed in rural areas are unnecessary.",
+        "cost": "Projected cost to the global economy."
+      },
+      "solution": {
+        "title": "Not just an app.",
+        "subtitle": "A Decision Engine.",
+        "desc": "We don't guess. We combine Audio Spectrograms, Visual Imaging, and Clinical Vitals to give field workers a lab-grade triage tool.",
+        "feature1": "Acoustic Biomarkers",
+        "feature1_desc": "Detects lung sounds (crackles vs. wheezes) using Azure AI.",
+        "feature2": "Clinical Context Fusion",
+        "feature2_desc": "Combines fever trends to rule out viral flu instantly.",
+        "feature3": "Geospatial Tracking",
+        "feature3_desc": "Live heatmaps alert governments to hotspots in real-time."
+      }
+    },
+    "label": "English"
+  },
+  "hi": {
+    "translation": {
+      "nav": {
+        "surveillance": "राष्ट्रीय निगरानी",
+        "launch": "डैशबोर्ड लॉन्च करें",
+        "title": "बैक्ट-ट्रेस"
+      },
+      "hero": {
+        "badge": "आधिकारिक इमेजिन कप प्रवेश",
+        "title": "सुपरबग बंद करो.",
+        "subtitle": "इससे पहले कि वे शुरू करें.",
+        "desc": "बैक्ट-ट्रेस दुनिया का पहला मल्टीमॉडल एआई निगरानी सिस्टम है जिसे ग्रामीण आबादी में वायरल बनाम बैक्टीरियल संक्रमणों के बीच अंतर करने के लिए डिज़ाइन किया गया है।",
+        "btn_deploy": "समाधान तैनात करें",
+        "btn_map": "लाइव मानचित्र देखें"
+      },
+      "stats": {
+        "deaths": "एएमआर के कारण 2050 तक वार्षिक मौतें।",
+        "unnecessary": "ग्रामीण क्षेत्रों में दी जाने वाली एंटीबायोटिक्स अनावश्यक हैं।",
+        "cost": "वैश्विक अर्थव्यवस्था के लिए अनुमानित लागत।"
+      },
+      "solution": {
+        "title": "सिर्फ एक ऐप नहीं.",
+        "subtitle": "एक निर्णय इंजन.",
+        "desc": "हम अनुमान नहीं लगाते. हम फील्ड वर्कर्स को लैब-ग्रेड ट्राइएज टूल देने के लिए ऑडियो स्पेक्ट्रोग्राम, विज़ुअल इमेजिंग और क्लिनिकल वाइटल्स को जोड़ते हैं।",
+        "feature1": "ध्वनिक बायोमार्कर",
+        "feature1_desc": "Azure AI का उपयोग करके फेफड़ों की आवाज़ (कटर बनाम घरघराहट) का पता लगाता है।",
+        "feature2": "नैदानिक ​​संदर्भ संलयन",
+        "feature2_desc": "वायरल फ्लू को तुरंत दूर करने के लिए बुखार की प्रवृत्तियों को संयोजित करता है।",
+        "feature3": "भू-स्थानिक ट्रैकिंग",
+        "feature3_desc": "लाइव हीटमैप वास्तविक समय में सरकारों को हॉटस्पॉट के प्रति सचेत करते हैं।"
+      }
+    },
+    "label": "Hindi"
+  },
+  "bn": {
+    "translation": {
+      "nav": {
+        "surveillance": "জাতীয় নজরদারি",
+        "launch": "ড্যাশবোর্ড চালু করুন",
+        "title": "ব্যাক্ট-ট্রেস"
+      },
+      "hero": {
+        "badge": "অফিসিয়াল ইমাজিন কাপ এন্ট্রি",
+        "title": "সুপারবাগ বন্ধ করুন।",
+        "subtitle": "তারা শুরু করার আগে।",
+        "desc": "ব্যাক্ট-ট্রেস হল বিশ্বের প্রথম মাল্টিমোডাল এআই নজরদারি সিস্টেম যা গ্রামীণ জনগোষ্ঠীর ভাইরাল বনাম ব্যাকটেরিয়া সংক্রমণের পার্থক্য করার জন্য ডিজাইন করা হয়েছে।",
+        "btn_deploy": "সমাধান স্থাপন করুন",
+        "btn_map": "লাইভ ম্যাপ দেখুন"
+      },
+      "stats": {
+        "deaths": "AMR এর কারণে 2050 সালের মধ্যে বার্ষিক মৃত্যু।",
+        "unnecessary": "গ্রামাঞ্চলে নির্ধারিত অ্যান্টিবায়োটিক অপ্রয়োজনীয়।",
+        "cost": "বিশ্ব অর্থনীতিতে প্রত্যাশিত খরচ।"
+      },
+      "solution": {
+        "title": "শুধু একটি অ্যাপ নয়।",
+        "subtitle": "একটি সিদ্ধান্ত ইঞ্জিন.",
+        "desc": "আমরা অনুমান করি না। আমরা অডিও স্পেকট্রোগ্রাম, ভিজ্যুয়াল ইমেজিং এবং ক্লিনিকাল ভাইটালগুলিকে একত্রিত করি যাতে ফিল্ড কর্মীদের একটি ল্যাব-গ্রেড ট্রাইজ টুল দেওয়া হয়।",
+        "feature1": "অ্যাকোস্টিক বায়োমার্কার",
+        "feature1_desc": "Azure AI ব্যবহার করে ফুসফুসের শব্দ (ক্র্যাকলস বনাম হুইজ) সনাক্ত করে।",
+        "feature2": "ক্লিনিকাল প্রসঙ্গ ফিউশন",
+        "feature2_desc": "ভাইরাল ফ্লুকে তাৎক্ষণিকভাবে বাতিল করতে জ্বরের প্রবণতাকে একত্রিত করে।",
+        "feature3": "ভূ-স্থানিক ট্র্যাকিং",
+        "feature3_desc": "লাইভ হিটম্যাপ সরকারকে রিয়েল-টাইমে হটস্পটগুলিতে সতর্ক করে।"
+      }
+    },
+    "label": "Bengali"
+  },
+  "te": {
+    "translation": {
+      "nav": {
+        "surveillance": "జాతీయ నిఘా",
+        "launch": "డాష్‌బోర్డ్‌ను ప్రారంభించండి",
+        "title": "బాక్ట్-ట్రేస్"
+      },
+      "hero": {
+        "badge": "అధికారిక ఇమాజిన్ కప్ ఎంట్రీ",
+        "title": "సూపర్‌బగ్‌లను ఆపండి.",
+        "subtitle": "వారు ప్రారంభించడానికి ముందు.",
+        "desc": "బాక్ట్-ట్రేస్ అనేది ప్రపంచంలోని మొట్టమొదటి మల్టీమోడల్ AI నిఘా వ్యవస్థ, ఇది గ్రామీణ జనాభాలో వైరల్ వర్సెస్ బాక్టీరియల్ ఇన్ఫెక్షన్‌లను వేరు చేయడానికి రూపొందించబడింది.",
+        "btn_deploy": "పరిష్కారాన్ని అమలు చేయండి",
+        "btn_map": "ప్రత్యక్ష మ్యాప్‌ని వీక్షించండి"
+      },
+      "stats": {
+        "deaths": "AMR కారణంగా 2050 నాటికి వార్షిక మరణాలు.",
+        "unnecessary": "గ్రామీణ ప్రాంతాల్లో సూచించిన యాంటీబయాటిక్స్ అవసరం లేదు.",
+        "cost": "ప్రపంచ ఆర్థిక వ్యవస్థకు అంచనా వ్యయం."
+      },
+      "solution": {
+        "title": "కేవలం యాప్ కాదు.",
+        "subtitle": "ఒక డెసిషన్ ఇంజిన్.",
+        "desc": "మేము ఊహించడం లేదు. ఫీల్డ్ వర్కర్లకు ల్యాబ్-గ్రేడ్ ట్రయాజ్ టూల్ అందించడానికి మేము ఆడియో స్పెక్ట్రోగ్రామ్‌లు, విజువల్ ఇమేజింగ్ మరియు క్లినికల్ వైటల్స్‌ని మిళితం చేస్తాము.",
+        "feature1": "ఎకౌస్టిక్ బయోమార్కర్స్",
+        "feature1_desc": "అజూర్ AIని ఉపయోగించి ఊపిరితిత్తుల శబ్దాలను (క్రాకిల్స్ వర్సెస్ వీజెస్) గుర్తిస్తుంది.",
+        "feature2": "క్లినికల్ కాంటెక్స్ట్ ఫ్యూజన్",
+        "feature2_desc": "వైరల్ ఫ్లూని తక్షణమే తోసిపుచ్చడానికి జ్వరం ట్రెండ్‌లను మిళితం చేస్తుంది.",
+        "feature3": "జియోస్పేషియల్ ట్రాకింగ్",
+        "feature3_desc": "లైవ్ హీట్‌మ్యాప్‌లు నిజ సమయంలో హాట్‌స్పాట్‌ల గురించి ప్రభుత్వాలను హెచ్చరిస్తాయి."
+      }
+    },
+    "label": "Telugu"
+  },
+  "mr": {
+    "translation": {
+      "nav": {
+        "surveillance": "राष्ट्रीय पाळत ठेवणे",
+        "launch": "डॅशबोर्ड लाँच करा",
+        "title": "बॅक्ट-ट्रेस"
+      },
+      "hero": {
+        "badge": "अधिकृत इमॅजिन कप एंट्री",
+        "title": "सुपरबग्स थांबवा.",
+        "subtitle": "ते सुरू करण्यापूर्वी.",
+        "desc": "बॅक्ट-ट्रेस ही जगातील पहिली मल्टीमोडल AI पाळत ठेवणारी प्रणाली आहे जी ग्रामीण लोकसंख्येतील व्हायरल विरुद्ध जिवाणू संक्रमण वेगळे करण्यासाठी डिझाइन केलेली आहे.",
+        "btn_deploy": "उपाय तैनात करा",
+        "btn_map": "थेट नकाशा पहा"
+      },
+      "stats": {
+        "deaths": "AMR मुळे 2050 पर्यंत वार्षिक मृत्यू.",
+        "unnecessary": "ग्रामीण भागात लिहून दिलेली अँटिबायोटिक्स अनावश्यक असतात.",
+        "cost": "जागतिक अर्थव्यवस्थेसाठी अंदाजित खर्च."
+      },
+      "solution": {
+        "title": "फक्त एक ॲप नाही.",
+        "subtitle": "एक निर्णय इंजिन.",
+        "desc": "आम्हाला अंदाज नाही. फील्ड कर्मचाऱ्यांना लॅब-ग्रेड ट्रायज टूल देण्यासाठी आम्ही ऑडिओ स्पेक्ट्रोग्राम, व्हिज्युअल इमेजिंग आणि क्लिनिकल व्हाइटल्स एकत्र करतो.",
+        "feature1": "ध्वनिक बायोमार्कर्स",
+        "feature1_desc": "Azure AI वापरून फुफ्फुसाचा आवाज (क्रॅकल्स वि. घरघर) शोधतो.",
+        "feature2": "क्लिनिकल संदर्भ फ्यूजन",
+        "feature2_desc": "व्हायरल फ्लू झटपट नाकारण्यासाठी ताप ट्रेंड एकत्र करते.",
+        "feature3": "भौगोलिक ट्रॅकिंग",
+        "feature3_desc": "लाइव्ह हीटमॅप्स सरकारला रिअल-टाइममध्ये हॉटस्पॉटबद्दल सतर्क करतात."
+      }
+    },
+    "label": "Marathi"
+  },
+  "ta": {
+    "translation": {
+      "nav": {
+        "surveillance": "தேசிய கண்காணிப்பு",
+        "launch": "டாஷ்போர்டை துவக்கவும்",
+        "title": "பாக்ட்-ட்ரேஸ்"
+      },
+      "hero": {
+        "badge": "அதிகாரப்பூர்வ இமேஜின் கோப்பை நுழைவு",
+        "title": "சூப்பர்பக்ஸை நிறுத்துங்கள்.",
+        "subtitle": "அவர்கள் தொடங்குவதற்கு முன்.",
+        "desc": "பாக்ட்-ட்ரேஸ் என்பது உலகின் முதல் மல்டிமோடல் AI கண்காணிப்பு அமைப்பாகும், இது கிராமப்புற மக்களில் வைரஸ் மற்றும் பாக்டீரியா தொற்றுகளை வேறுபடுத்த வடிவமைக்கப்பட்டுள்ளது.",
+        "btn_deploy": "தீர்வை வரிசைப்படுத்தவும்",
+        "btn_map": "நேரடி வரைபடத்தைப் பார்க்கவும்"
+      },
+      "stats": {
+        "deaths": "AMR காரணமாக 2050 இல் வருடாந்திர இறப்புகள்.",
+        "unnecessary": "கிராமப்புறங்களில் பரிந்துரைக்கப்படும் நுண்ணுயிர் எதிர்ப்பிகள் தேவையற்றவை.",
+        "cost": "உலகப் பொருளாதாரத்திற்கான திட்டமிடப்பட்ட செலவு."
+      },
+      "solution": {
+        "title": "ஒரு பயன்பாடு மட்டுமல்ல.",
+        "subtitle": "ஒரு முடிவு இயந்திரம்.",
+        "desc": "நாங்கள் யூகிக்கவில்லை. நாங்கள் ஆடியோ ஸ்பெக்ட்ரோகிராம்கள், விஷுவல் இமேஜிங் மற்றும் கிளினிக்கல் வைட்டல்ஸ் ஆகியவற்றை ஒருங்கிணைத்து களப்பணியாளர்களுக்கு ஆய்வக-தர சோதனைக் கருவியை வழங்குகிறோம்.",
+        "feature1": "ஒலி உயிரியல் குறிப்பான்கள்",
+        "feature1_desc": "Azure AI ஐப் பயன்படுத்தி நுரையீரல் ஒலிகளை (கிராக்கிள்ஸ் வெர்சஸ் வீஸ்) கண்டறிகிறது.",
+        "feature2": "மருத்துவ சூழல் இணைவு",
+        "feature2_desc": "வைரஸ் காய்ச்சலை உடனடியாக நிராகரிக்க காய்ச்சல் போக்குகளை ஒருங்கிணைக்கிறது.",
+        "feature3": "புவிசார் கண்காணிப்பு",
+        "feature3_desc": "நேரடி வெப்ப வரைபடங்கள் நிகழ்நேரத்தில் ஹாட்ஸ்பாட்களுக்கு அரசாங்கங்களை எச்சரிக்கின்றன."
+      }
+    },
+    "label": "Tamil"
+  },
+  "gu": {
+    "translation": {
+      "nav": {
+        "surveillance": "નેશનલ સર્વેલન્સ",
+        "launch": "ડેશબોર્ડ લોંચ કરો",
+        "title": "બેક્ટ-ટ્રેસ"
+      },
+      "hero": {
+        "badge": "સત્તાવાર ઇમેજિન કપ એન્ટ્રી",
+        "title": "સુપરબગ્સ રોકો.",
+        "subtitle": "તેઓ શરૂ થાય તે પહેલાં.",
+        "desc": "બેક્ટ-ટ્રેસ એ વિશ્વની પ્રથમ મલ્ટિમોડલ AI સર્વેલન્સ સિસ્ટમ છે જે ગ્રામીણ વસ્તીમાં વાયરલ વિ બેક્ટેરિયલ ચેપને અલગ પાડવા માટે રચાયેલ છે.",
+        "btn_deploy": "ઉકેલ જમાવો",
+        "btn_map": "જીવંત નકશો જુઓ"
+      },
+      "stats": {
+        "deaths": "AMR ને કારણે 2050 સુધીમાં વાર્ષિક મૃત્યુ.",
+        "unnecessary": "ગ્રામીણ વિસ્તારોમાં સૂચવવામાં આવેલી એન્ટિબાયોટિક્સ બિનજરૂરી છે.",
+        "cost": "વૈશ્વિક અર્થતંત્ર માટે અંદાજિત ખર્ચ."
+      },
+      "solution": {
+        "title": "માત્ર એક એપ નથી.",
+        "subtitle": "એક નિર્ણય એન્જિન.",
+        "desc": "અમે ધાર્યું નથી. ફિલ્ડ વર્કર્સને લેબ-ગ્રેડ ટ્રાયજ ટૂલ આપવા માટે અમે ઑડિઓ સ્પેક્ટ્રોગ્રામ્સ, વિઝ્યુઅલ ઇમેજિંગ અને ક્લિનિકલ વાઇટલ્સને જોડીએ છીએ.",
+        "feature1": "એકોસ્ટિક બાયોમાર્કર્સ",
+        "feature1_desc": "Azure AI નો ઉપયોગ કરીને ફેફસાંના અવાજો (ક્રેકલ્સ વિ. વ્હીઝ) શોધે છે.",
+        "feature2": "ક્લિનિકલ સંદર્ભ ફ્યુઝન",
+        "feature2_desc": "વાયરલ ફ્લૂને તાત્કાલિક નકારી કાઢવા માટે તાવના વલણોને જોડે છે.",
+        "feature3": "જીઓસ્પેશિયલ ટ્રેકિંગ",
+        "feature3_desc": "Error 504 (Server Error)!!1504.That’s an error.There was an error. Please try again later.That’s all we know."
+      }
+    },
+    "label": "Gujarati"
+  },
+  "kn": {
+    "translation": {
+      "nav": {
+        "surveillance": "ರಾಷ್ಟ್ರೀಯ ಕಣ್ಗಾವಲು",
+        "launch": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+        "title": "ಬ್ಯಾಕ್ಟ್-ಟ್ರೇಸ್"
+      },
+      "hero": {
+        "badge": "ಅಧಿಕೃತ ಇಮ್ಯಾಜಿನ್ ಕಪ್ ಪ್ರವೇಶ",
+        "title": "ಸೂಪರ್‌ಬಗ್‌ಗಳನ್ನು ನಿಲ್ಲಿಸಿ.",
+        "subtitle": "ಅವರು ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು.",
+        "desc": "ಬ್ಯಾಕ್ಟ್-ಟ್ರೇಸ್ ವಿಶ್ವದ ಮೊದಲ ಮಲ್ಟಿಮೋಡಲ್ AI ಕಣ್ಗಾವಲು ವ್ಯವಸ್ಥೆಯಾಗಿದ್ದು, ಗ್ರಾಮೀಣ ಜನಸಂಖ್ಯೆಯಲ್ಲಿ ವೈರಲ್ ಮತ್ತು ಬ್ಯಾಕ್ಟೀರಿಯಾದ ಸೋಂಕುಗಳನ್ನು ಪ್ರತ್ಯೇಕಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.",
+        "btn_deploy": "ಪರಿಹಾರವನ್ನು ನಿಯೋಜಿಸಿ",
+        "btn_map": "ಲೈವ್ ನಕ್ಷೆಯನ್ನು ವೀಕ್ಷಿಸಿ"
+      },
+      "stats": {
+        "deaths": "AMR ನಿಂದಾಗಿ 2050 ರ ವೇಳೆಗೆ ವಾರ್ಷಿಕ ಸಾವುಗಳು.",
+        "unnecessary": "ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಶಿಫಾರಸು ಮಾಡಲಾದ ಪ್ರತಿಜೀವಕಗಳು ಅನಗತ್ಯ.",
+        "cost": "ಜಾಗತಿಕ ಆರ್ಥಿಕತೆಗೆ ಯೋಜಿತ ವೆಚ್ಚ."
+      },
+      "solution": {
+        "title": "ಕೇವಲ ಅಪ್ಲಿಕೇಶನ್ ಅಲ್ಲ.",
+        "subtitle": "ಎ ಡಿಸಿಷನ್ ಇಂಜಿನ್.",
+        "desc": "ನಾವು ಊಹಿಸುವುದಿಲ್ಲ. ಫೀಲ್ಡ್ ವರ್ಕರ್‌ಗಳಿಗೆ ಲ್ಯಾಬ್-ಗ್ರೇಡ್ ಟ್ರೇಜ್ ಟೂಲ್ ನೀಡಲು ನಾವು ಆಡಿಯೋ ಸ್ಪೆಕ್ಟ್ರೋಗ್ರಾಮ್‌ಗಳು, ವಿಷುಯಲ್ ಇಮೇಜಿಂಗ್ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ವೈಟಲ್‌ಗಳನ್ನು ಸಂಯೋಜಿಸುತ್ತೇವೆ.",
+        "feature1": "ಅಕೌಸ್ಟಿಕ್ ಬಯೋಮಾರ್ಕರ್ಸ್",
+        "feature1_desc": "Azure AI ಅನ್ನು ಬಳಸಿಕೊಂಡು ಶ್ವಾಸಕೋಶದ ಶಬ್ದಗಳನ್ನು (ಕ್ರ್ಯಾಕಲ್ಸ್ ವರ್ಸಸ್ ವ್ಹೀಜ್ಸ್) ಪತ್ತೆ ಮಾಡುತ್ತದೆ.",
+        "feature2": "ಕ್ಲಿನಿಕಲ್ ಸನ್ನಿವೇಶ ಫ್ಯೂಷನ್",
+        "feature2_desc": "ವೈರಲ್ ಜ್ವರವನ್ನು ತಕ್ಷಣವೇ ತಳ್ಳಿಹಾಕಲು ಜ್ವರ ಪ್ರವೃತ್ತಿಯನ್ನು ಸಂಯೋಜಿಸುತ್ತದೆ.",
+        "feature3": "ಜಿಯೋಸ್ಪೇಷಿಯಲ್ ಟ್ರ್ಯಾಕಿಂಗ್",
+        "feature3_desc": "ಲೈವ್ ಹೀಟ್‌ಮ್ಯಾಪ್‌ಗಳು ನೈಜ ಸಮಯದಲ್ಲಿ ಹಾಟ್‌ಸ್ಪಾಟ್‌ಗಳಿಗೆ ಸರ್ಕಾರಗಳನ್ನು ಎಚ್ಚರಿಸುತ್ತವೆ."
+      }
+    },
+    "label": "Kannada"
+  },
+  "ml": {
+    "translation": {
+      "nav": {
+        "surveillance": "ദേശീയ നിരീക്ഷണം",
+        "launch": "ഡാഷ്‌ബോർഡ് സമാരംഭിക്കുക",
+        "title": "ബാക്റ്റ്-ട്രേസ്"
+      },
+      "hero": {
+        "badge": "ഔദ്യോഗിക ഇമാജിൻ കപ്പ് എൻട്രി",
+        "title": "സൂപ്പർബഗ്ഗുകൾ നിർത്തുക.",
+        "subtitle": "അവർ ആരംഭിക്കുന്നതിന് മുമ്പ്.",
+        "desc": "ബാക്റ്റ്-ട്രേസ് എന്നത് ഗ്രാമീണ ജനതയിലെ വൈറൽ-ബാക്റ്റീരിയൽ അണുബാധകളെ വേർതിരിച്ചറിയാൻ രൂപകൽപ്പന ചെയ്ത ലോകത്തിലെ ആദ്യത്തെ മൾട്ടിമോഡൽ എഐ നിരീക്ഷണ സംവിധാനമാണ്.",
+        "btn_deploy": "പരിഹാരം വിന്യസിക്കുക",
+        "btn_map": "തത്സമയ മാപ്പ് കാണുക"
+      },
+      "stats": {
+        "deaths": "AMR മൂലം 2050-ഓടെ വാർഷിക മരണങ്ങൾ.",
+        "unnecessary": "ഗ്രാമപ്രദേശങ്ങളിൽ നിർദ്ദേശിക്കുന്ന ആൻ്റിബയോട്ടിക്കുകൾ അനാവശ്യമാണ്.",
+        "cost": "ആഗോള സമ്പദ്‌വ്യവസ്ഥയുടെ ചെലവ് പ്രതീക്ഷിക്കുന്നു."
+      },
+      "solution": {
+        "title": "വെറുമൊരു ആപ്പ് അല്ല.",
+        "subtitle": "ഒരു തീരുമാന എഞ്ചിൻ.",
+        "desc": "ഞങ്ങൾ ഊഹിക്കുന്നില്ല. ഫീൽഡ് തൊഴിലാളികൾക്ക് ലാബ്-ഗ്രേഡ് ട്രയേജ് ടൂൾ നൽകുന്നതിന് ഞങ്ങൾ ഓഡിയോ സ്പെക്ട്രോഗ്രാമുകൾ, വിഷ്വൽ ഇമേജിംഗ്, ക്ലിനിക്കൽ വൈറ്റലുകൾ എന്നിവ സംയോജിപ്പിക്കുന്നു.",
+        "feature1": "അക്കോസ്റ്റിക് ബയോമാർക്കറുകൾ",
+        "feature1_desc": "Azure AI ഉപയോഗിച്ച് ശ്വാസകോശ ശബ്ദങ്ങൾ (ക്രാക്കിൾസ് vs. വീസ്) കണ്ടുപിടിക്കുന്നു.",
+        "feature2": "ക്ലിനിക്കൽ സന്ദർഭ ഫ്യൂഷൻ",
+        "feature2_desc": "വൈറൽ ഫ്ലൂ തൽക്ഷണം ഒഴിവാക്കുന്നതിന് പനി പ്രവണതകളെ സംയോജിപ്പിക്കുന്നു.",
+        "feature3": "ജിയോസ്പേഷ്യൽ ട്രാക്കിംഗ്",
+        "feature3_desc": "തത്സമയ ഹീറ്റ്‌മാപ്പുകൾ തത്സമയം ഹോട്ട്‌സ്‌പോട്ടുകളിലേക്ക് സർക്കാരുകളെ അറിയിക്കുന്നു."
+      }
+    },
+    "label": "Malayalam"
+  },
+  "pa": {
+    "translation": {
+      "nav": {
+        "surveillance": "ਰਾਸ਼ਟਰੀ ਨਿਗਰਾਨੀ",
+        "launch": "Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.",
+        "title": "ਬੈਕਟ-ਟਰੇਸ"
+      },
+      "hero": {
+        "badge": "ਅਧਿਕਾਰਤ ਕਲਪਨਾ ਕੱਪ ਐਂਟਰੀ",
+        "title": "ਸੁਪਰਬੱਗਸ ਨੂੰ ਰੋਕੋ।",
+        "subtitle": "ਉਹ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ.",
+        "desc": "ਬੈਕਟ-ਟਰੇਸ ਦੁਨੀਆ ਦਾ ਪਹਿਲਾ ਮਲਟੀਮੋਡਲ ਏਆਈ ਸਰਵੀਲੈਂਸ ਸਿਸਟਮ ਹੈ ਜੋ ਪੇਂਡੂ ਆਬਾਦੀ ਵਿੱਚ ਵਾਇਰਲ ਬਨਾਮ ਬੈਕਟੀਰੀਆ ਦੀ ਲਾਗ ਨੂੰ ਵੱਖ ਕਰਨ ਲਈ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ।",
+        "btn_deploy": "ਹੱਲ ਲਾਗੂ ਕਰੋ",
+        "btn_map": "Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know."
+      },
+      "stats": {
+        "deaths": "AMR ਕਾਰਨ 2050 ਤੱਕ ਸਾਲਾਨਾ ਮੌਤਾਂ।",
+        "unnecessary": "ਪੇਂਡੂ ਖੇਤਰਾਂ ਵਿੱਚ ਤਜਵੀਜ਼ ਕੀਤੀਆਂ ਐਂਟੀਬਾਇਓਟਿਕਸ ਬੇਲੋੜੀਆਂ ਹਨ।",
+        "cost": "ਗਲੋਬਲ ਆਰਥਿਕਤਾ ਲਈ ਅਨੁਮਾਨਿਤ ਲਾਗਤ."
+      },
+      "solution": {
+        "title": "ਸਿਰਫ਼ ਇੱਕ ਐਪ ਨਹੀਂ।",
+        "subtitle": "ਇੱਕ ਫੈਸਲਾ ਇੰਜਣ.",
+        "desc": "ਸਾਨੂੰ ਅੰਦਾਜ਼ਾ ਨਹੀਂ ਹੈ। ਅਸੀਂ ਫੀਲਡ ਵਰਕਰਾਂ ਨੂੰ ਲੈਬ-ਗ੍ਰੇਡ ਟ੍ਰਾਈਜ ਟੂਲ ਦੇਣ ਲਈ ਆਡੀਓ ਸਪੈਕਟ੍ਰੋਗ੍ਰਾਮ, ਵਿਜ਼ੂਅਲ ਇਮੇਜਿੰਗ, ਅਤੇ ਕਲੀਨਿਕਲ ਵਾਇਟਲਸ ਨੂੰ ਜੋੜਦੇ ਹਾਂ।",
+        "feature1": "ਧੁਨੀ ਬਾਇਓਮਾਰਕਰ",
+        "feature1_desc": "Azure AI ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ ਫੇਫੜਿਆਂ ਦੀਆਂ ਆਵਾਜ਼ਾਂ (ਕ੍ਰੈਕਲਸ ਬਨਾਮ ਘਰਘਰਾਹਟ) ਦਾ ਪਤਾ ਲਗਾਉਂਦਾ ਹੈ।",
+        "feature2": "ਕਲੀਨਿਕਲ ਸੰਦਰਭ ਫਿਊਜ਼ਨ",
+        "feature2_desc": "ਵਾਇਰਲ ਫਲੂ ਨੂੰ ਤੁਰੰਤ ਬਾਹਰ ਕੱਢਣ ਲਈ ਬੁਖਾਰ ਦੇ ਰੁਝਾਨਾਂ ਨੂੰ ਜੋੜਦਾ ਹੈ।",
+        "feature3": "ਭੂ-ਸਥਾਨਕ ਟਰੈਕਿੰਗ",
+        "feature3_desc": "ਲਾਈਵ ਹੀਟਮੈਪ ਸਰਕਾਰਾਂ ਨੂੰ ਰੀਅਲ-ਟਾਈਮ ਵਿੱਚ ਹੌਟਸਪੌਟਸ ਬਾਰੇ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ।"
+      }
+    },
+    "label": "Punjabi"
+  },
+  "es": {
+    "translation": {
+      "nav": {
+        "surveillance": "Vigilancia Nacional",
+        "launch": "Panel de inicio",
+        "title": "Bact-Trace"
+      },
+      "hero": {
+        "badge": "Entrada oficial a la Copa Imagine",
+        "title": "Detén las superbacterias.",
+        "subtitle": "Antes de que empiecen.",
+        "desc": "Bact-Trace es el primer sistema de vigilancia de IA multimodal del mundo diseñado para distinguir infecciones virales de bacterianas en poblaciones rurales.",
+        "btn_deploy": "Implementar solución",
+        "btn_map": "Ver mapa en vivo"
+      },
+      "stats": {
+        "deaths": "Muertes anuales hasta 2050 por RAM.",
+        "unnecessary": "Los antibióticos recetados en las zonas rurales son innecesarios.",
+        "cost": "Costo proyectado para la economía global."
+      },
+      "solution": {
+        "title": "No sólo una aplicación.",
+        "subtitle": "Un motor de decisiones.",
+        "desc": "No lo adivinamos. Combinamos espectrogramas de audio, imágenes visuales y signos vitales clínicos para brindar a los trabajadores de campo una herramienta de clasificación de nivel de laboratorio.",
+        "feature1": "Biomarcadores acústicos",
+        "feature1_desc": "Detecta sonidos pulmonares (crepitantes frente a sibilancias) mediante Azure AI.",
+        "feature2": "Fusión del contexto clínico",
+        "feature2_desc": "Combina tendencias de fiebre para descartar gripe viral al instante.",
+        "feature3": "Seguimiento geoespacial",
+        "feature3_desc": "Los mapas de calor en vivo alertan a los gobiernos sobre puntos críticos en tiempo real."
+      }
+    },
+    "label": "Spanish"
+  },
+  "fr": {
+    "translation": {
+      "nav": {
+        "surveillance": "Surveillance nationale",
+        "launch": "Lancer le tableau de bord",
+        "title": "Bact-Trace"
+      },
+      "hero": {
+        "badge": "Inscription officielle à l'Imagine Cup",
+        "title": "Arrêtez les superbactéries.",
+        "subtitle": "Avant qu'ils ne commencent.",
+        "desc": "Bact-Trace est le premier système de surveillance multimodal par IA au monde conçu pour distinguer les infections virales des infections bactériennes dans les populations rurales.",
+        "btn_deploy": "Déployer la solution",
+        "btn_map": "Voir la carte en direct"
+      },
+      "stats": {
+        "deaths": "Décès annuels d’ici 2050 dus à la RAM.",
+        "unnecessary": "Les antibiotiques prescrits dans les zones rurales sont inutiles.",
+        "cost": "Coût projeté pour l’économie mondiale."
+      },
+      "solution": {
+        "title": "Pas seulement une application.",
+        "subtitle": "Un moteur de décision.",
+        "desc": "Nous ne devinons pas. Nous combinons des spectrogrammes audio, de l'imagerie visuelle et des signes vitaux cliniques pour offrir aux agents de terrain un outil de triage de qualité laboratoire.",
+        "feature1": "Biomarqueurs acoustiques",
+        "feature1_desc": "Détecte les bruits pulmonaires (crépitements ou respirations sifflantes) à l’aide d’Azure AI.",
+        "feature2": "Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.",
+        "feature2_desc": "Combine les tendances de la fièvre pour exclure instantanément la grippe virale.",
+        "feature3": "Suivi géospatial",
+        "feature3_desc": "Des cartes thermiques en direct alertent les gouvernements des points chauds en temps réel."
+      }
+    },
+    "label": "French"
+  },
+  "de": {
+    "translation": {
+      "nav": {
+        "surveillance": "Nationale Überwachung",
+        "launch": "Starten Sie das Dashboard",
+        "title": "Bact-Trace"
+      },
+      "hero": {
+        "badge": "Offizieller Imagine-Cup-Eintrag",
+        "title": "Stoppen Sie die Superbugs.",
+        "subtitle": "Bevor sie beginnen.",
+        "desc": "Bact-Trace ist das weltweit erste multimodale KI-Überwachungssystem, das zur Unterscheidung viraler und bakterieller Infektionen in ländlichen Bevölkerungsgruppen entwickelt wurde.",
+        "btn_deploy": "Lösung bereitstellen",
+        "btn_map": "Live-Karte anzeigen"
+      },
+      "stats": {
+        "deaths": "Jährliche Todesfälle bis 2050 aufgrund von AMR.",
+        "unnecessary": "In ländlichen Gebieten verordnete Antibiotika sind unnötig.",
+        "cost": "Prognostizierte Kosten für die Weltwirtschaft."
+      },
+      "solution": {
+        "title": "Nicht nur eine App.",
+        "subtitle": "Eine Entscheidungsmaschine.",
+        "desc": "Wir raten nicht. Wir kombinieren Audiospektrogramme, visuelle Bildgebung und klinische Vitalwerte, um Außendienstmitarbeitern ein Triage-Tool in Laborqualität an die Hand zu geben.",
+        "feature1": "Akustische Biomarker",
+        "feature1_desc": "Erkennt Lungengeräusche (Knistern oder Keuchen) mithilfe von Azure AI.",
+        "feature2": "Klinische Kontextfusion",
+        "feature2_desc": "Kombiniert Fiebertrends, um eine Virusgrippe sofort auszuschließen.",
+        "feature3": "Geodatenverfolgung",
+        "feature3_desc": "Live-Heatmaps machen Regierungen in Echtzeit auf Hotspots aufmerksam."
+      }
+    },
+    "label": "German"
+  },
+  "zh-CN": {
+    "translation": {
+      "nav": {
+        "surveillance": "国家监视",
+        "launch": "启动仪表板",
+        "title": "细菌追踪"
+      },
+      "hero": {
+        "badge": "想象杯官方参赛作品",
+        "title": "阻止超级细菌。",
+        "subtitle": "在他们开始之前。",
+        "desc": "Bact-Trace 是世界上第一个多模式人工智能监控系统，旨在区分农村人口的病毒感染和细菌感染。",
+        "btn_deploy": "部署解决方案",
+        "btn_map": "查看实时地图"
+      },
+      "stats": {
+        "deaths": "到 2050 年，每年都会因抗菌素耐药性而死亡。",
+        "unnecessary": "农村地区不需要开抗生素。",
+        "cost": "全球经济的预计成本。"
+      },
+      "solution": {
+        "title": "不仅仅是一个应用程序。",
+        "subtitle": "决策引擎。",
+        "desc": "我们不猜测。我们将音频频谱图、视觉成像和临床生命体征结合起来，为现场工作人员提供实验室级的分类工具。",
+        "feature1": "声学生物标志物",
+        "feature1_desc": "使用 Azure AI 检测肺音（爆裂声与喘息声）。",
+        "feature2": "临床背景融合",
+        "feature2_desc": "结合发烧趋势立即排除病毒性流感。",
+        "feature3": "地理空间追踪",
+        "feature3_desc": "实时热图实时向政府发出热点警报。"
+      }
+    },
+    "label": "Chinese (Simplified)"
+  },
+  "ar": {
+    "translation": {
+      "nav": {
+        "surveillance": "المراقبة الوطنية",
+        "launch": "إطلاق لوحة القيادة",
+        "title": "تتبع البكتيريا"
+      },
+      "hero": {
+        "badge": "الدخول الرسمي لكأس التخيل",
+        "title": "أوقف الجراثيم الخارقة.",
+        "subtitle": "قبل أن يبدأوا.",
+        "desc": "Bact-Trace هو أول نظام مراقبة متعدد الوسائط يعمل بالذكاء الاصطناعي في العالم مصمم للتمييز بين العدوى الفيروسية والبكتيرية في سكان الريف.",
+        "btn_deploy": "نشر الحل",
+        "btn_map": "عرض الخريطة الحية"
+      },
+      "stats": {
+        "deaths": "الوفيات السنوية بحلول عام 2050 بسبب مقاومة مضادات الميكروبات",
+        "unnecessary": "المضادات الحيوية الموصوفة في المناطق الريفية ليست ضرورية.",
+        "cost": "التكلفة المتوقعة على الاقتصاد العالمي."
+      },
+      "solution": {
+        "title": "ليس مجرد تطبيق.",
+        "subtitle": "محرك القرار.",
+        "desc": "نحن لا نخمن. نحن نجمع بين أجهزة قياس الطيف الصوتي والتصوير المرئي والعناصر الحيوية السريرية لتزويد العاملين الميدانيين بأداة فرز على مستوى المختبر.",
+        "feature1": "المؤشرات الحيوية الصوتية",
+        "feature1_desc": "يكتشف أصوات الرئة (الطقطقة مقابل الصفير) باستخدام Azure AI.",
+        "feature2": "السياق السريري الانصهار",
+        "feature2_desc": "يجمع بين اتجاهات الحمى لاستبعاد الأنفلونزا الفيروسية على الفور.",
+        "feature3": "التتبع الجغرافي المكاني",
+        "feature3_desc": "تنبه خرائط الحرارة الحية الحكومات إلى النقاط الساخنة في الوقت الفعلي."
+      }
+    },
+    "label": "Arabic"
+  },
+  "pt": {
+    "translation": {
+      "nav": {
+        "surveillance": "Vigilância Nacional",
+        "launch": "Iniciar painel",
+        "title": "Bact-Trace"
+      },
+      "hero": {
+        "badge": "Inscrição Oficial da Imagine Cup",
+        "title": "Pare as superbactérias.",
+        "subtitle": "Antes de começarem.",
+        "desc": "Bact-Trace é o primeiro sistema de vigilância multimodal de IA do mundo projetado para distinguir infecções virais e bacterianas em populações rurais.",
+        "btn_deploy": "Implantar solução",
+        "btn_map": "Ver mapa ao vivo"
+      },
+      "stats": {
+        "deaths": "Mortes anuais até 2050 devido à RAM.",
+        "unnecessary": "Os antibióticos prescritos nas zonas rurais são desnecessários.",
+        "cost": "Custo projetado para a economia global."
+      },
+      "solution": {
+        "title": "Não apenas um aplicativo.",
+        "subtitle": "Um mecanismo de decisão.",
+        "desc": "Nós não adivinhamos. Combinamos espectrogramas de áudio, imagens visuais e sinais vitais clínicos para oferecer aos funcionários de campo uma ferramenta de triagem de nível laboratorial.",
+        "feature1": "Biomarcadores Acústicos",
+        "feature1_desc": "Detecta sons pulmonares (estalos vs. chiado no peito) usando o Azure AI.",
+        "feature2": "Fusão de Contexto Clínico",
+        "feature2_desc": "Combina tendências de febre para descartar instantaneamente a gripe viral.",
+        "feature3": "Rastreamento Geoespacial",
+        "feature3_desc": "Mapas de calor ao vivo alertam os governos sobre pontos de acesso em tempo real."
+      }
+    },
+    "label": "Portuguese"
+  },
+  "ru": {
+    "translation": {
+      "nav": {
+        "surveillance": "Национальный надзор",
+        "launch": "Запустить панель мониторинга",
+        "title": "Бакт-Трейс"
+      },
+      "hero": {
+        "badge": "Официальная заявка на Imagine Cup",
+        "title": "Остановите супербактерий.",
+        "subtitle": "Прежде чем они начнутся.",
+        "desc": "Bact-Trace — это первая в мире мультимодальная система наблюдения с использованием искусственного интеллекта, предназначенная для различения вирусных и бактериальных инфекций среди сельского населения.",
+        "btn_deploy": "Развертывание решения",
+        "btn_map": "Посмотреть живую карту"
+      },
+      "stats": {
+        "deaths": "Ежегодная смертность к 2050 году из-за УПП.",
+        "unnecessary": "Антибиотики, назначаемые в сельской местности, не являются необходимыми.",
+        "cost": "Прогнозируемые издержки для мировой экономики."
+      },
+      "solution": {
+        "title": "Не просто приложение.",
+        "subtitle": "Двигатель принятия решений.",
+        "desc": "Мы не догадываемся. Мы объединяем аудиоспектрограммы, визуальные изображения и клинические показатели, чтобы предоставить полевым работникам инструмент лабораторной сортировки.",
+        "feature1": "Акустические биомаркеры",
+        "feature1_desc": "Обнаруживает звуки легких (хрипы и хрипы) с помощью Azure AI.",
+        "feature2": "Слияние клинического контекста",
+        "feature2_desc": "Объединяет тенденции лихорадки, чтобы мгновенно исключить вирусный грипп.",
+        "feature3": "Геопространственное отслеживание",
+        "feature3_desc": "Тепловые карты в режиме реального времени предупреждают правительства о горячих точках в режиме реального времени."
+      }
+    },
+    "label": "Russian"
+  },
+  "ja": {
+    "translation": {
+      "nav": {
+        "surveillance": "国家監視",
+        "launch": "ダッシュボードの起動",
+        "title": "バクトトレース"
+      },
+      "hero": {
+        "badge": "イマジンカップ公式エントリー",
+        "title": "スーパーバグを止めてください。",
+        "subtitle": "始まる前に。",
+        "desc": "Bact-Trace は、農村地域におけるウイルス感染と細菌感染を区別するために設計された世界初のマルチモーダル AI 監視システムです。",
+        "btn_deploy": "ソリューションの導入",
+        "btn_map": "ライブマップを見る"
+      },
+      "stats": {
+        "deaths": "AMRによる2050年までの年間死亡者数。",
+        "unnecessary": "田舎で処方される抗生物質は不要です。",
+        "cost": "世界経済に対する予測コスト。"
+      },
+      "solution": {
+        "title": "アプリだけではありません。",
+        "subtitle": "意思決定エンジン。",
+        "desc": "私たちは推測しません。当社はオーディオ スペクトログラム、ビジュアル イメージング、クリニカル バイタルを組み合わせて、現場作業者に研究室レベルのトリアージ ツールを提供します。",
+        "feature1": "音響バイオマーカー",
+        "feature1_desc": "Azure AI を使用して肺の音 (パチパチ音と喘鳴音) を検出します。",
+        "feature2": "臨床コンテキストの融合",
+        "feature2_desc": "発熱傾向を組み合わせて、ウイルス性インフルエンザを即座に除外します。",
+        "feature3": "地理空間追跡",
+        "feature3_desc": "ライブ ヒートマップは政府にホットスポットをリアルタイムで警告します。"
+      }
+    },
+    "label": "Japanese"
+  }
+}
