@@ -3,7 +3,7 @@ import { useReactMediaRecorder } from 'react-media-recorder';
 import Webcam from 'react-webcam';
 import { 
   Mic, Camera, Activity, UploadCloud, 
-  RefreshCw, LayoutDashboard, FileText, Settings, User, Loader2, Upload, Play,
+  RefreshCw, LayoutDashboard, FileText, User, Loader2, Upload, Play,
   Thermometer, MapPin, AlertCircle 
 } from 'lucide-react';
 import axios from 'axios';
@@ -105,7 +105,7 @@ const DoctorView = () => {
         formData.append("symptomsDays", symptomsDays);
         formData.append("hasPhlegm", hasPhlegm);
         formData.append("breathingDifficulty", breathingDifficulty);
-        if (location.lat) {
+        if (location.lat && location.long) {
             formData.append("latitude", location.lat.toString());
             formData.append("longitude", location.long.toString());
         }

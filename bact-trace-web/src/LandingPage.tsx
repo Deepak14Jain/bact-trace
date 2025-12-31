@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { Activity, ShieldCheck, Globe, ArrowRight, Mic, Thermometer, MapPin, CheckCircle } from 'lucide-react';
+import { Activity, ShieldCheck, Globe, ArrowRight, Mic, Thermometer, MapPin } from 'lucide-react';
 
 export default function LandingPage({ onEnterApp, onEnterGov }: { onEnterApp: () => void, onEnterGov: () => void }) {
   const { t, i18n } = useTranslation();
